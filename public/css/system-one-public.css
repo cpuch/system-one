@@ -1,0 +1,33 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+#system-one-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Table headers and data */
+#system-one-table td,
+#system-one-table th {
+    padding: 0.5em;
+}
+
+/* Table rows (even) */
+#system-one-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Table rows (hover) */
+#system-one-table tr:hover {
+    background-color: #ddd;
+}
+
+/* Table headers */
+#system-one-table th {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: left;
+    background-color: rgb(90, 90, 90);
+    color: white;
+}
