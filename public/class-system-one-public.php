@@ -113,7 +113,7 @@ class System_One_Public {
 		} else {
 			$shows = $response['data'];
 			ob_start();
-			include_once 'partials/system-one-public-shortcode.php';
+			include 'partials/system-one-public-shortcode.php';
 			return ob_get_clean();
 		}
 
