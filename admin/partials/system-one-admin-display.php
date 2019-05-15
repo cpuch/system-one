@@ -17,7 +17,8 @@ if ( ! defined( 'WPINC' ) ) {
 }
 ?>
 <div class="wrap">
-	<h2>System One</h2>
+	<h2>System One Integration</h2>
+    <div id="plugin-notice"></div>
 
 	<form method="post" action="options.php">
 	<?php
@@ -49,6 +50,7 @@ if ( ! defined( 'WPINC' ) ) {
 					<td>
 						<input type="checkbox" id="system-one-enable_cache" name="system-one[enable_cache]" value="1" <?php checked( $enable_cache, 1 ); ?> />
 						<p class="description"><?php esc_attr_e( 'If enable, requests are cached for 1 hour.', 'system-one' ); ?></p>
+						<p class="submit"><input type="button" class="button button-primary" name="clear-cache" value="<?php esc_attr_e( 'Clear Cache', 'system-one' ); ?>" /></p>
 					</td>
 				</tr>
 			</tbody>

@@ -54,6 +54,24 @@ class System_One_Admin {
 	}
 
 	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since 0.1.2
+	 * @param string $hook_suffix    The page hook suffix.
+	 */
+	public function enqueue_scripts( $hook_suffix ) {
+
+		// Only register if we are on the plugin settings page.
+		if ( 'toplevel_page_system-one' === $hook_suffix ) {
+
+			// Use minified libraries if SCRIPT_DEBUG is turned off.
+			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
+			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/system-one-admin' . $suffix . '.js', array(), $this->version, true );
+		}
+	}
+
+	/**
 	 * Register the admin menu into the WordPress Dashboard menu.
 	 *
 	 * @since 0.1
@@ -124,6 +142,25 @@ class System_One_Admin {
 	 */
 	public function register_plugin_options() {
 		register_setting( $this->plugin_name, $this->plugin_name, array( $this, 'validate' ) );
+	}
+
+	/**
+	 * Clear plugin cache.
+	 *
+	 * @since 0.1.2
+	 */
+	public function clear_system_one_cache() {
+		global $wpdb;
+
+		$table = $wpdb->options;
+		$where = array(
+			'option_name' => '_transient_system_one_cache_%',
+		);
+		$query = $wpdb->query(
+			"DELETE FROM $wpdb->options WHERE option_name LIKE '_transient_%system_one_cache_%'"
+		);
+
+		die();
 	}
 
 

@@ -44,3 +44,6 @@ You will find ‘System One’ menu in your WordPress admin panel.
 
 = 0.1.1 =
 * Allow displaying multiple shortcodes on a same post
+
+= 0.1.2 =
+* Clear plugin cache
