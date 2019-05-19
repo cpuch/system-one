@@ -59,7 +59,15 @@ class System_One_Public {
 	 * @since 0.1
 	 */
 	public function enqueue_styles() {
+		// Enqueue the plugin default stylesheet.
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/system-one-public.css', array(), $this->version, 'all' );
+
+		// Add the custom css.
+		$options = get_option( 'system-one' );
+		if ( isset( $options['custom_css'] ) && ! empty( $options['custom_css'] ) ) {
+			wp_add_inline_style( 'system-one', $options['custom_css'] );
+		}
+
 	}
 
 

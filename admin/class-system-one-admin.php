@@ -67,7 +67,12 @@ class System_One_Admin {
 			// Use minified libraries if SCRIPT_DEBUG is turned off.
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
+			// Enqueue the plugin default JS.
 			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/system-one-admin' . $suffix . '.js', array(), $this->version, true );
+
+			// Enqueue the code editor JS.
+			wp_enqueue_code_editor( array( 'type' => 'text/css' ) );
+			wp_enqueue_script( 'js-code-editor', plugin_dir_url( __FILE__ ) . 'js/code-editor' . $suffix . '.js', array( 'jquery' ), $this->version, true );
 		}
 	}
 
@@ -124,6 +129,7 @@ class System_One_Admin {
 
 		$new_input['username']     = ( isset( $input['username'] ) && ! empty( $input['username'] ) ) ? sanitize_text_field( $input['username'] ) : '';
 		$new_input['enable_cache'] = ( isset( $input['enable_cache'] ) && ! empty( $input['enable_cache'] ) ) ? true : false;
+		$new_input['custom_css']   = ( isset( $input['custom_css'] ) && ! empty( $input['custom_css'] ) ) ? sanitize_textarea_field( $input['custom_css'] ) : '';
 
 		$system_one = new System_One_Api( $new_input['username'] );
 		$response   = $system_one->get();

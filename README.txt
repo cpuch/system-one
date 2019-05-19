@@ -47,3 +47,6 @@ You will find ‘System One’ menu in your WordPress admin panel.
 
 = 0.1.2 =
 * Clear plugin cache
+
+= 0.1.3 =
+* Add custom css

@@ -34,8 +34,9 @@ class System_One_Activator {
 
 		// Default values.
 		$options = array(
-			'username'       => '',
-			'enable_cache'   => false,
+			'username'     => '',
+			'enable_cache' => false,
+			'custom_css'   => '',
 		);
 		add_option( 'system-one', $options );
 	}
