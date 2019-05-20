@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: System One Integration\n"
-"POT-Creation-Date: 2019-05-20 18:47+0200\n"
+"POT-Creation-Date: 2019-05-20 21:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -12,30 +12,38 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: admin/partials/system-one-admin-display.php:40
+#: admin/class-system-one-admin.php:143
+msgid "Invalid System One username."
+msgstr ""
+
+#: admin/class-system-one-admin.php:145
+msgid "Settings saved."
+msgstr ""
+
+#: admin/partials/system-one-admin-display.php:41
 msgid "Username"
 msgstr ""
 
-#: admin/partials/system-one-admin-display.php:44
+#: admin/partials/system-one-admin-display.php:45
 msgid "Enter your System One agency username."
 msgstr ""
 
-#: admin/partials/system-one-admin-display.php:49
+#: admin/partials/system-one-admin-display.php:50
 msgid "Enable cache"
 msgstr ""
 
-#: admin/partials/system-one-admin-display.php:53
+#: admin/partials/system-one-admin-display.php:54
 msgid "If enable, requests are cached for 1 hour."
 msgstr ""
 
-#: admin/partials/system-one-admin-display.php:54
+#: admin/partials/system-one-admin-display.php:55
 msgid "Clear Cache"
 msgstr ""
 
-#: admin/partials/system-one-admin-display.php:59
+#: admin/partials/system-one-admin-display.php:60
 msgid "Custom CSS"
 msgstr ""
 
-#: admin/partials/system-one-admin-display.php:68
+#: admin/partials/system-one-admin-display.php:69
 msgid "Save Settings"
 msgstr ""

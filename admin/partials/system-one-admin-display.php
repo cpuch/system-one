@@ -29,6 +29,7 @@ if ( ! defined( 'WPINC' ) ) {
 		$enable_cache = ( isset( $options['enable_cache'] ) && ! empty( $options['enable_cache'] ) ) ? 1 : 0;
 		$custom_css   = ( isset( $options['custom_css'] ) && ! empty( $options['custom_css'] ) ) ? esc_attr( $options['custom_css'] ) : '';
 
+		settings_errors( $this->plugin_name );
 		settings_fields( $this->plugin_name );
 		do_settings_sections( $this->plugin_name );
 	?>

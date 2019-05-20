@@ -70,9 +70,8 @@ class System_One_Admin {
 			// Enqueue the plugin default JS.
 			wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/system-one-admin' . $suffix . '.js', array(), $this->version, true );
 
-			// Enqueue the code editor JS.
+			// Enqueue assets needed by the code editor.
 			wp_enqueue_code_editor( array( 'type' => 'text/css' ) );
-			wp_enqueue_script( 'js-code-editor', plugin_dir_url( __FILE__ ) . 'js/code-editor' . $suffix . '.js', array( 'jquery' ), $this->version, true );
 		}
 	}
 
@@ -132,11 +131,13 @@ class System_One_Admin {
 		$new_input['custom_css']   = ( isset( $input['custom_css'] ) && ! empty( $input['custom_css'] ) ) ? sanitize_textarea_field( $input['custom_css'] ) : '';
 
 		$system_one = new System_One_Api( $new_input['username'] );
-		$response   = $system_one->get();
+		$response   = $system_one->test();
 
-		if ( ! isset( $response ) ) {
+		if ( ! $response ) {
 			$new_input['username'] = '';
-			add_settings_error( $this->plugin_name, 'username', 'Invalid username.', 'error' );
+			add_settings_error( $this->plugin_name, 'username', __( 'Invalid username.', 'system-one' ), 'error' );
+		} else {
+			add_settings_error( $this->plugin_name, 'username', __( 'Settings saved.', 'system-one' ), 'updated' );
 		}
 
 		return $new_input;

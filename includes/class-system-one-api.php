@@ -61,6 +61,26 @@ class System_One_Api {
 	}
 
 	/**
+	 * Test a System One username.
+	 *
+	 * @return bool
+	 */
+	public function test() {
+		$url      = 'https://client.systemonesoftware.com/' . $this->username . '/json/';
+		$response = wp_remote_head( esc_url( $url ) );
+
+		if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) ) {
+			return false;
+		}
+
+		if ( 200 !== wp_remote_retrieve_response_code( $response ) ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
 	 * System One API only accepts GET request.
 	 *
 	 * @param string $artist       System One artist ID.
