@@ -50,3 +50,6 @@ You will find ‘System One’ menu in your WordPress admin panel.
 
 = 0.1.3 =
 * Add custom css
+
+= 0.1.4 =
+* Fix the Settings link in the plugins admin page

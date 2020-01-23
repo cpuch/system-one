@@ -101,7 +101,7 @@ class System_One_Admin {
 	public function add_plugin_action_links( $links ) {
 
 		$settings_link = array(
-			'<a href="' . admin_url( 'options-general.php?page=system-one' ) . '">' . __( 'Settings', 'system-one' ) . '</a>',
+			'<a href="' . admin_url( 'admin.php?page=system-one' ) . '">' . __( 'Settings', 'system-one' ) . '</a>',
 		);
 
 		return array_merge( $settings_link, $links );
