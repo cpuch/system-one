@@ -116,10 +116,12 @@ class System_One_Public {
 		$system_one = new System_One_Client( $options['username'] );
 		$response   = $system_one->get( $id );
 
+		// Return a table of shows.
 		if ( isset( $response ) && empty( $response['data'] ) ) {
 			return '<p>No shows found.</p>';
 		} else {
-			$shows = $response['data'];
+			$shows     = $response['data'];
+			$countries = json_decode( file_get_contents( 'http://country.io/names.json' ), true );
 			ob_start();
 			include 'partials/system-one-public-shortcode.php';
 			return ob_get_clean();

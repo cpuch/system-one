@@ -131,7 +131,7 @@ class System_One_Admin {
 		$new_input['custom_css']   = ( isset( $input['custom_css'] ) && ! empty( $input['custom_css'] ) ) ? sanitize_textarea_field( $input['custom_css'] ) : '';
 
 		$system_one = new System_One_Client( $new_input['username'] );
-		$response   = $system_one->test();
+		$response   = $system_one->get();
 
 		if ( ! $response ) {
 			$new_input['username'] = '';
