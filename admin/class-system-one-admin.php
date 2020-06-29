@@ -130,7 +130,7 @@ class System_One_Admin {
 		$new_input['enable_cache'] = ( isset( $input['enable_cache'] ) && ! empty( $input['enable_cache'] ) ) ? true : false;
 		$new_input['custom_css']   = ( isset( $input['custom_css'] ) && ! empty( $input['custom_css'] ) ) ? sanitize_textarea_field( $input['custom_css'] ) : '';
 
-		$system_one = new System_One_Api( $new_input['username'] );
+		$system_one = new System_One_Client( $new_input['username'] );
 		$response   = $system_one->test();
 
 		if ( ! $response ) {

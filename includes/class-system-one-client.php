@@ -19,7 +19,7 @@
  * @subpackage System_One/includes
  * @author     Cedric Puchalver <cedric.puchalver@gmail.com>
  */
-class System_One_Api {
+class System_One_Client {
 
 	/**
 	 * The ID of this plugin.

@@ -113,7 +113,7 @@ class System_One_Public {
 
 		// Send the request to System One API.
 		$options    = get_option( 'system-one' );
-		$system_one = new System_One_Api( $options['username'] );
+		$system_one = new System_One_Client( $options['username'] );
 		$response   = $system_one->get( $id );
 
 		if ( isset( $response ) && empty( $response['data'] ) ) {

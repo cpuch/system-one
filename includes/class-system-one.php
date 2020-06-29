@@ -124,7 +124,7 @@ class System_One {
 		/**
 		 * The class responsible for defining the System One API client.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-system-one-api.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-system-one-client.php';
 
 		$this->loader = new System_One_Loader();
 
