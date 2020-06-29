@@ -10,7 +10,6 @@
  */
 
 ?>
-<?php $options = get_option( 'system-one' ); ?>
 <table id="system-one-table">
 	<thead>
 		<tr>
@@ -28,7 +27,7 @@
 			<td><?php echo esc_attr( $show['artist']['name'] ); ?></td>
 			<td><?php echo esc_attr( $show['venue']['name'] ); ?></td>
 			<td><?php echo esc_attr( $show['venue']['city'] ); ?></td>
-			<td><?php echo esc_attr( $show['venue']['country'] ); ?></td>
+			<td><?php echo esc_attr( $countries[ $show['venue']['country'] ] ); ?></td>
 		</tr>
 		<?php endforeach ?>
 	</tbody>
